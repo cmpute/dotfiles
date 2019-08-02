@@ -1,0 +1,20 @@
+[Unit]
+Description=UMich Drive (rclone)
+AssertPathIsDirectory=/home/jacobz/.local/mnt/umdrive
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount \
+    --config=/home/jacobz/.config/rclone/rclone.conf \
+    --no-modtime \
+    --drive-use-trash \
+    --dir-cache-time=60m \
+	--copy-links \
+	--buffer-size 256M \
+	UMich-GDrive:/ /home/jacobz/.local/mnt/umdrive
+ExecStop=/bin/fusermount -u /home/jacobz/.local/mnt/umdrive
+Restart=always
+RestartSec=10
+ 
+[Install]
+WantedBy=default.target

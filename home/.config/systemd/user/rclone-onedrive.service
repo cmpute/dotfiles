@@ -1,0 +1,20 @@
+[Unit]
+Description=UMich Drive (rclone)
+AssertPathIsDirectory=/home/jacobz/.local/mnt/onedrive
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount \
+    --config=/home/jacobz/.config/rclone/rclone.conf \
+    --no-modtime \
+    --drive-use-trash \
+    --dir-cache-time=60m \
+	--copy-links \
+	--buffer-size 256M \
+	OneDrive:/ /home/jacobz/.local/mnt/onedrive
+ExecStop=/bin/fusermount -u /home/jacobz/.local/mnt/onedrive
+Restart=always
+RestartSec=10
+ 
+[Install]
+WantedBy=default.target
