@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=PCL Viewer
+Comment=View point cloud files
+Comment[zh_CN]=查看点云文件
+TryExec=pcl_viewer
+Exec=pcl_viewer %F -use_point_picking -ax 1
+Terminal=true
+Type=Application
+Keywords=Cloud
+Categories=Utility
+StartupNotify=false
+MimeType=image/x-photo-cd;image/point-cloud
