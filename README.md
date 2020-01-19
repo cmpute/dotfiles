@@ -1,6 +1,6 @@
 # Apply Settings
-- Apply refind boot settings: `sudo cp -a --no-preserve=mode,ownership dotfiles/boot/refind /boot/efi/EFI`
-- Apply home setting files: `cp -a dotfiles/home/.config ~`
+- Apply refind boot settings: `sudo cp -a --no-preserve=mode,ownership ./boot/refind /boot/efi/EFI`
+- Apply home setting files: `cp -a ./home/.config ~`
 
 # References
 **dotfiles**:

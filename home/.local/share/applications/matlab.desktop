@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=MATLAB R2019a
+Type=Application
+Terminal=false
+Icon=matlab
+Comment=Scientific computing environment
+Exec=matlab -desktop
+StartupNotify=true
+Categories=Development;Science;Math;Engineering
